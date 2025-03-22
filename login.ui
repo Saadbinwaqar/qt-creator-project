@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>studentlogin</class>
+ <widget class="QDialog" name="studentlogin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>578</width>
+    <height>405</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Main Window Background */
+QWidget {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    padding: 10px;
+}
+
+/* Labels */
+QLabel {
+    font-size: 17px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Buttons */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ff5c93, stop:1 #ffc371);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 22px;
+    min-width: 120px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ffc371, stop:1 #ff5c93);
+    box-shadow: 0px 5px 12px rgba(255, 92, 147, 0.5);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #e34e82, stop:1 #ff9f57);
+    transform: translateY(2px);
+}
+
+/* ComboBox */
+QComboBox {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px;
+    background-color: #ff5c93;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    selection-background-color: #ff5c93;
+    border-radius: 8px;
+}
+
+/* LineEdit */
+QLineEdit {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+/* Checkboxes */
+QCheckBox {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ff5c93;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: background-color 0.25s;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ff5c93;
+    border: 2px solid #ff9f57;
+}
+
+/* ScrollBar */
+QScrollBar:vertical {
+    background: #1f1f1f;
+    width: 12px;
+    margin: 4px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #ff5c93;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+}
+
+/* Table Widget */
+QTableWidget {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    color: #ffffff;
+    font-size: 14px;
+    gridline-color: #ff5c93;
+}
+
+QHeaderView::section {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border: none;
+}
+
+/* Tooltips */
+QToolTip {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>50</y>
+     <width>411</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QGroupBox {
+    border: 2px solid #ff5c93;
+    border-radius: 12px;
+    margin-top: 1ex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font: bold 14px;
+}
+
+QGroupBox::title {
+    border-radius: 8px;
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ff5c93, stop:1 #ffc371);
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 2px 8px;
+    color: white;
+    font-size: 16px;
+}</string>
+   </property>
+   <property name="title">
+    <string>Login</string>
+   </property>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>40</y>
+      <width>301</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>PASSWORD</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_password">
+         <property name="echoMode">
+          <enum>QLineEdit::EchoMode::Password</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>USERNAME</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_username"/>
+       </item>
+      </layout>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>LOGIN</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="back">
+       <property name="text">
+        <string>BACK</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

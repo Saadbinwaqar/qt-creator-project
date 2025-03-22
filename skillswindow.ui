@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SkillsWindow</class>
+ <widget class="QMainWindow" name="SkillsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>616</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Main Window Background */
+QWidget {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    padding: 10px;
+}
+
+/* Labels */
+QLabel {
+    font-size: 17px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Buttons */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ff5c93, stop:1 #ffc371);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 22px;
+    min-width: 120px;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ffc371, stop:1 #ff5c93);
+
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #e34e82, stop:1 #ff9f57);
+
+}
+
+/* ComboBox */
+QComboBox {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px;
+    background-color: #ff5c93;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    selection-background-color: #ff5c93;
+    border-radius: 8px;
+}
+
+/* LineEdit */
+QLineEdit {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+/* Checkboxes */
+QCheckBox {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ff5c93;
+    border-radius: 4px;
+    background-color: transparent;
+
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ff5c93;
+    border: 2px solid #ff9f57;
+}
+
+/* ScrollBar */
+QScrollBar:vertical {
+    background: #1f1f1f;
+    width: 12px;
+    margin: 4px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #ff5c93;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+}
+
+/* Table Widget */
+QTableWidget {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    color: #ffffff;
+    font-size: 14px;
+    gridline-color: #ff5c93;
+}
+
+QHeaderView::section {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border: none;
+}
+
+/* Tooltips */
+QToolTip {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>110</y>
+      <width>591</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QListWidget {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 8px;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+}
+
+QListWidget::item {
+    padding: 8px;
+    border-bottom: 1px solid #ff5c93;
+}
+
+QListWidget::item:selected {
+    background-color: #ff5c93;
+    color: white;
+    border-radius: 4px;
+}
+</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>20</y>
+      <width>291</width>
+      <height>61</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addSkillButton">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>10</y>
+      <width>221</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ADD SKILL</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="removeSkillButton">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>440</y>
+      <width>181</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>REMOVE SKILL</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>440</y>
+      <width>181</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>BACK</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>45</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

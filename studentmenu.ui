@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StudentMenu</class>
+ <widget class="QMainWindow" name="StudentMenu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Main Window Background */
+QWidget {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    padding: 10px;
+}
+
+/* Labels */
+QLabel {
+    font-size: 17px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Buttons */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ff5c93, stop:1 #ffc371);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 22px;
+    min-width: 120px;
+   
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ffc371, stop:1 #ff5c93);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #e34e82, stop:1 #ff9f57);
+ 
+}
+
+/* ComboBox */
+QComboBox {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px;
+    background-color: #ff5c93;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    selection-background-color: #ff5c93;
+    border-radius: 8px;
+}
+
+/* LineEdit */
+QLineEdit {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+/* Checkboxes */
+QCheckBox {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ff5c93;
+    border-radius: 4px;
+    background-color: transparent;
+
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ff5c93;
+    border: 2px solid #ff9f57;
+}
+
+/* ScrollBar */
+QScrollBar:vertical {
+    background: #1f1f1f;
+    width: 12px;
+    margin: 4px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #ff5c93;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+}
+
+/* Table Widget */
+QTableWidget {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    color: #ffffff;
+    font-size: 14px;
+    gridline-color: #ff5c93;
+}
+
+QHeaderView::section {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border: none;
+}
+
+/* Tooltips */
+QToolTip {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+/* GroupBox */
+QGroupBox {
+    border: 2px solid #ff5c93;
+    border-radius: 12px;
+    margin-top: 1ex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font: bold 14px;
+}
+
+QGroupBox::title {
+    border-radius: 8px;
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ff5c93, stop:1 #ffc371);
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 2px 8px;
+    color: white;
+    font-size: 16px;
+}
+
+/* List Widget */
+QListWidget {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 8px;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+}
+
+QListWidget::item {
+    padding: 8px;
+    border-bottom: 1px solid #ff5c93;
+}
+
+QListWidget::item:selected {
+    background-color: #ff5c93;
+    color: white;
+    border-radius: 4px;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_rollNumber">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>30</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Main Window Background */
+QWidget {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    padding: 10px;
+}
+
+
+
+/* Buttons */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ff5c93, stop:1 #ffc371);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 22px;
+    min-width: 120px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ffc371, stop:1 #ff5c93);
+    box-shadow: 0px 5px 12px rgba(255, 92, 147, 0.5);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #e34e82, stop:1 #ff9f57);
+    transform: translateY(2px);
+}
+
+/* ComboBox */
+QComboBox {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px;
+    background-color: #ff5c93;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    selection-background-color: #ff5c93;
+    border-radius: 8px;
+}
+
+/* LineEdit */
+QLabel {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+/* Checkboxes */
+QCheckBox {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ff5c93;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: background-color 0.25s;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ff5c93;
+    border: 2px solid #ff9f57;
+}
+
+/* ScrollBar */
+QScrollBar:vertical {
+    background: #1f1f1f;
+    width: 12px;
+    margin: 4px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #ff5c93;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+}
+
+/* Table Widget */
+QTableWidget {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    color: #ffffff;
+    font-size: 14px;
+    gridline-color: #ff5c93;
+}
+
+QHeaderView::section {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border: none;
+}
+
+/* Tooltips */
+QToolTip {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+/* GroupBox */
+QGroupBox {
+    border: 2px solid #ff5c93;
+    border-radius: 12px;
+    margin-top: 1ex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font: bold 14px;
+}
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_semester">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>130</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Main Window Background */
+QWidget {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    padding: 10px;
+}
+
+
+
+/* Buttons */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ff5c93, stop:1 #ffc371);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 22px;
+    min-width: 120px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ffc371, stop:1 #ff5c93);
+    box-shadow: 0px 5px 12px rgba(255, 92, 147, 0.5);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #e34e82, stop:1 #ff9f57);
+    transform: translateY(2px);
+}
+
+/* ComboBox */
+QComboBox {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px;
+    background-color: #ff5c93;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    selection-background-color: #ff5c93;
+    border-radius: 8px;
+}
+
+/* LineEdit */
+QLabel {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+/* Checkboxes */
+QCheckBox {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ff5c93;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: background-color 0.25s;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ff5c93;
+    border: 2px solid #ff9f57;
+}
+
+/* ScrollBar */
+QScrollBar:vertical {
+    background: #1f1f1f;
+    width: 12px;
+    margin: 4px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #ff5c93;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+}
+
+/* Table Widget */
+QTableWidget {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    color: #ffffff;
+    font-size: 14px;
+    gridline-color: #ff5c93;
+}
+
+QHeaderView::section {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border: none;
+}
+
+/* Tooltips */
+QToolTip {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+/* GroupBox */
+QGroupBox {
+    border: 2px solid #ff5c93;
+    border-radius: 12px;
+    margin-top: 1ex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font: bold 14px;
+}
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_department">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>130</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Main Window Background */
+QWidget {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    padding: 10px;
+}
+
+
+
+/* Buttons */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ff5c93, stop:1 #ffc371);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 22px;
+    min-width: 120px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ffc371, stop:1 #ff5c93);
+    box-shadow: 0px 5px 12px rgba(255, 92, 147, 0.5);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #e34e82, stop:1 #ff9f57);
+    transform: translateY(2px);
+}
+
+/* ComboBox */
+QComboBox {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px;
+    background-color: #ff5c93;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    selection-background-color: #ff5c93;
+    border-radius: 8px;
+}
+
+/* LineEdit */
+QLabel {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+/* Checkboxes */
+QCheckBox {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ff5c93;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: background-color 0.25s;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ff5c93;
+    border: 2px solid #ff9f57;
+}
+
+/* ScrollBar */
+QScrollBar:vertical {
+    background: #1f1f1f;
+    width: 12px;
+    margin: 4px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #ff5c93;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+}
+
+/* Table Widget */
+QTableWidget {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    color: #ffffff;
+    font-size: 14px;
+    gridline-color: #ff5c93;
+}
+
+QHeaderView::section {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border: none;
+}
+
+/* Tooltips */
+QToolTip {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+/* GroupBox */
+QGroupBox {
+    border: 2px solid #ff5c93;
+    border-radius: 12px;
+    margin-top: 1ex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font: bold 14px;
+}
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FULL NAME:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>30</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string> ROLL NUMBER:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SEMESTER:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>130</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DEPARTMENT:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_name">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>30</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Main Window Background */
+QWidget {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    padding: 10px;
+}
+
+
+
+/* Buttons */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ff5c93, stop:1 #ffc371);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 22px;
+    min-width: 120px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ffc371, stop:1 #ff5c93);
+    box-shadow: 0px 5px 12px rgba(255, 92, 147, 0.5);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #e34e82, stop:1 #ff9f57);
+    transform: translateY(2px);
+}
+
+/* ComboBox */
+QComboBox {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px;
+    background-color: #ff5c93;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    selection-background-color: #ff5c93;
+    border-radius: 8px;
+}
+
+/* LineEdit */
+QLabel {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+/* Checkboxes */
+QCheckBox {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ff5c93;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: background-color 0.25s;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ff5c93;
+    border: 2px solid #ff9f57;
+}
+
+/* ScrollBar */
+QScrollBar:vertical {
+    background: #1f1f1f;
+    width: 12px;
+    margin: 4px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #ff5c93;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+}
+
+/* Table Widget */
+QTableWidget {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    color: #ffffff;
+    font-size: 14px;
+    gridline-color: #ff5c93;
+}
+
+QHeaderView::section {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border: none;
+}
+
+/* Tooltips */
+QToolTip {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+/* GroupBox */
+QGroupBox {
+    border: 2px solid #ff5c93;
+    border-radius: 12px;
+    margin-top: 1ex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font: bold 14px;
+}
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>250</y>
+      <width>204</width>
+      <height>79</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>VIEW GRADES</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="skillsButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>390</y>
+      <width>204</width>
+      <height>79</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>VIEW SKILLS</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_description">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>250</y>
+      <width>211</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>VIEW DESCRIPTION</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="backbutton">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>390</y>
+      <width>204</width>
+      <height>79</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>BACK</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>45</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

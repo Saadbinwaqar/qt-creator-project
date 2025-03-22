@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Adminmenu</class>
+ <widget class="QMainWindow" name="Adminmenu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>848</width>
+    <height>641</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Main Window Background */
+QWidget {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    padding: 10px;
+}
+
+/* Labels */
+QLabel {
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Buttons */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ff5c93, stop:1 #ffc371);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 22px;
+    min-width: 120px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ffc371, stop:1 #ff5c93);
+    box-shadow: 0px 5px 12px rgba(255, 92, 147, 0.5);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #e34e82, stop:1 #ff9f57);
+    transform: translateY(2px);
+}
+
+/* ComboBox */
+QComboBox {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px;
+    background-color: #ff5c93;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    selection-background-color: #ff5c93;
+    border-radius: 8px;
+}
+
+/* LineEdit */
+QLineEdit {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+/* Checkboxes */
+QCheckBox {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ff5c93;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: background-color 0.25s;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ff5c93;
+    border: 2px solid #ff9f57;
+}
+
+/* ScrollBar */
+QScrollBar:vertical {
+    background: #1f1f1f;
+    width: 12px;
+    margin: 4px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #ff5c93;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+}
+
+/* Table Widget */
+QTableWidget {
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    color: #ffffff;
+    font-size: 14px;
+    gridline-color: #ff5c93;
+}
+
+QHeaderView::section {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border: none;
+}
+
+/* Tooltips */
+QToolTip {
+    background-color: #ff5c93;
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>0</y>
+      <width>351</width>
+      <height>43</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    font-size: 13px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Roll Number</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="styleSheet">
+        <string notr="true">
+QLabel {
+
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 10px;
+    padding: 8px 12px;
+
+}</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>50</y>
+      <width>421</width>
+      <height>430</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* Center-aligns the text */
+f;
+    font-size: 13px;
+}</string>
+         </property>
+         <property name="text">
+          <string>NAME</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_name">
+         <property name="styleSheet">
+          <string notr="true">
+QLabel {
+
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 11px;
+    padding: 8px 12px;
+
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* Center-aligns the text */
+f;
+   font-size: 13px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>ROLL NUMBER</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_rollno">
+         <property name="styleSheet">
+          <string notr="true">
+QLabel {
+
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 11px;
+    padding: 8px 12px;
+
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* Center-aligns the text */
+f;
+    font-size: 13px;
+}</string>
+         </property>
+         <property name="text">
+          <string>DEPARTMENT</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_department">
+         <property name="styleSheet">
+          <string notr="true">
+QLabel {
+
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 11px;
+    padding: 8px 12px;
+
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="label_9">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* Center-aligns the text */
+f;
+    font-size: 13px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>SEMESTER</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_semester_2">
+         <property name="styleSheet">
+          <string notr="true">
+QLabel {
+
+    background-color: #1f1f1f;
+    border: 2px solid #ff5c93;
+    border-radius: 10px;
+    color: white;
+    font-size: 11px;
+    padding: 8px 12px;
+
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_12">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* Center-aligns the text */
+
+    font-size: 13px;
+}</string>
+         </property>
+         <property name="text">
+          <string>GRADE</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_11">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    qproperty-alignment: 'AlignCenter'; /* Center-aligns the text */
+f;
+    font-size: 13px;
+}</string>
+         </property>
+         <property name="text">
+          <string>SUBJECT</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QComboBox" name="comboBoxGrade"/>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBoxSubject"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>480</y>
+      <width>200</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    font-family: &quot;Verdana&quot;;
+    font-size: 12px;
+    color: white; /* Orange text */
+    font-weight: bold;
+    padding: 15px 30px;
+    margin: 10px;
+    min-width: 120px;
+    min-height: 25px;
+}</string>
+    </property>
+    <property name="text">
+     <string>UPDATE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushbutton_back">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>480</y>
+      <width>200</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    font-family: &quot;Verdana&quot;;
+    font-size: 12px;
+    color: white; /* Orange text */
+    font-weight: bold;
+    padding: 15px 30px;
+    margin: 10px;
+    min-width: 120px;
+    min-height: 25px;
+}</string>
+    </property>
+    <property name="text">
+     <string>BACK</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>848</width>
+     <height>45</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
